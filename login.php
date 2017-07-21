@@ -51,7 +51,7 @@ include("inc/loginheader.php");
 				<div class="well no-padding">
 					<form action="<?php echo APP_URL; ?>/#main/dashboard" id="login-form" class="smart-form client-form">
 						<header>
-							Sign In
+							Sign In out
 						</header>
 
 						<fieldset>
