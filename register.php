@@ -35,7 +35,7 @@ include("inc/loginheader.php");
 				<!-- END AJAX-DROPDOWN -->
 			</div>
 
-			<span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs txt-color-white">Hi Already registered?</span> <a href="<?php echo APP_URL; ?>/login" class="btn btn-danger">Sign In</a> </span>
+			<span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs txt-color-white">Already registered?</span> <a href="<?php echo APP_URL; ?>/login" class="btn btn-danger">Sign In</a> </span>
 
 		</header>
 
