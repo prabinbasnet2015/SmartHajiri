@@ -5,7 +5,22 @@ require_once("inc/init.php");
 
 //require UI configuration (nav, ribbon, etc.)
 require_once("inc/config.ui.php");
-
+include("inc/connect.php");
+if(isset($_POST['submit']))
+{
+	$user_name = $_POST['email'];
+	$password = $_POST['password'];
+	
+	$query = mysqli_query($con, "SELECT * FROM user where (user_name ='{$user_name}' and password ='{$password}') or (email_id = '{$user_name}' and password ='{$password}')  limit 1");
+	if(!$query) die(mysqli_error($con));
+	if(mysqli_num_rows($query)==1)
+	{
+		$_SESSION['username']=$user_name;
+		header('Location: index.php');
+	}
+	else
+		echo "wrong password";		
+}
 /*---------------- PHP Custom Scripts ---------
 
 YOU CAN SET CONFIGURATION VARIABLES HERE BEFORE IT GOES TO NAV, RIBBON, ETC.
@@ -22,6 +37,7 @@ $page_css[] = "your_style.css";
 $no_main_header = true;
 $page_body_prop = array("id"=>"extr-page", "class"=>"animated fadeInDown");
 include("inc/loginheader.php");
+
 
 ?>
 <!-- ==========================CONTENT STARTS HERE ========================== -->
@@ -49,7 +65,7 @@ include("inc/loginheader.php");
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 color-red">
 				<div class="well no-padding">
-					<form action="<?php echo APP_URL; ?>/#main/dashboard" id="login-form" class="smart-form client-form">
+					<form action="<?Php $_SERVER['PHP_SELF']?>" method = "POST" id="login-form" class="smart-form client-form ">
 						<header>
 							Sign In
 						</header>
@@ -80,9 +96,8 @@ include("inc/loginheader.php");
 							</section>
 						</fieldset>
 						<footer>
-							<button type="submit" class="btn btn-primary" >
-								Sign in
-							</button>
+							<input type="submit" class="btn btn-primary" name = "submit" value = "Sign In" >
+							
 						</footer>
 					</form>
 
