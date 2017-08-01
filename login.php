@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
 	if(mysqli_num_rows($query)==1)
 	{
 		$_SESSION['username']=$user_name;
-		header('Location: index.php');
+		header('Location: index');
 	}
 	else
 		echo "wrong password";		
