@@ -51,7 +51,7 @@ include("inc/loginheader.php");
 		<!-- END AJAX-DROPDOWN -->
 	</div>
 
-	<span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs txt-color-white">Start Smart Lekha for your Business, Register today !</span> <a href="<?php echo APP_URL; ?>/register" class="btn btn-danger">Sign Up</a> </span>
+	<span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs txt-color-white">Start Smart Lekha for your Business, Register today !</span> <a href="<?php echo APP_URL; ?>/register" class="btn btn-danger">Hello Sign Up</a> </span>
 
 </header>
 
